@@ -53,12 +53,12 @@ class Auth extends CI_Controller
 		$this->data['title'] = $this->lang->line('login_heading');
 
 		$recaptcha = $this->input->post('g-recaptcha-response');
-		$response = $this->recaptcha->verifyResponse($recaptcha);
+		$response = ['success' => true];//$this->recaptcha->verifyResponse($recaptcha);
 
 		// validate form input
 		$this->form_validation->set_rules('identity', str_replace(':', '', $this->lang->line('login_identity_label')), 'required');
 		$this->form_validation->set_rules('password', str_replace(':', '', $this->lang->line('login_password_label')), 'required');
-		$this->form_validation->set_rules('g-recaptcha-response', 'Captcha', 'required');
+		//$this->form_validation->set_rules('g-recaptcha-response', 'Captcha', 'required');
 		$this->form_validation->set_message('required', '{field} mohon diisi');
 
 		// jika form_validation gagal dijalankan dan response recaptcha juga gagal maka akan diarahkan kembali ke halaman login
