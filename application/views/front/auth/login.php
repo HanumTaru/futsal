@@ -1,6 +1,6 @@
 <?php $this->load->view('front/header'); ?>
 <?php $this->load->view('front/navbar'); ?>
-<?php echo $script_captcha; // javascript recaptcha ?>
+<?php echo '';/*script_captcha; // javascript recaptcha*/ ?>
 
 <div class="container">
 	<div class="row">
@@ -26,7 +26,7 @@
 							<?php echo form_password($password); ?>
 							<span class="glyphicon glyphicon-lock form-control-feedback"></span>
 						</div>
-						<p><?php echo $captcha ?></p>
+						<p><?php echo ''; ?></p>
 						<?php echo lang('login_remember_label', 'remember');?>
 						<?php echo form_checkbox('remember', '1', FALSE, 'id="remember"');?> | <button type="button" class="btn btn-sm btn-success" data-toggle="modal" data-target="#pswreset">Lupa Password?</button>
 						<hr>
